@@ -23,7 +23,7 @@ export default function Bar() {
           <p className="section__p">Search</p>
           <input
             type="text"
-            placeholder="Enter name"
+            placeholder="Enter Name"
             className="section__input-name"
             onChange={(e) => onChangeBarInput(e)}
           ></input>
