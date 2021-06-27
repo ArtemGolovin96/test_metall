@@ -1,7 +1,8 @@
 let globalState = {
   globalArray: [],
   selectedArray: [],
-  activeDomain: "",
+  activeDomain: "all",
+  inputBarValue: "",
 };
 
 export default function reducer(state = globalState, action) {
@@ -15,7 +16,7 @@ export default function reducer(state = globalState, action) {
       };
 
     case "ERR":
-      alert("Ошибка загрузки страницы, обратитесь к администратору");
+      //alert("Ошибка загрузки страницы, обратитесь к администратору");
       return state;
     case "CLICK_ON_BUTTON_DOMAIN":
       let allArr = [...state.globalArray];
@@ -25,7 +26,7 @@ export default function reducer(state = globalState, action) {
           return el;
         }
       });
-      return { ...state, selectedArray: res };
+      return { ...state, selectedArray: res, activeDomain: action.payload.val };
 
     case "ON_CHANGE_BAR_INPUT":
       let allArrToChange = [...state.globalArray];
@@ -35,7 +36,7 @@ export default function reducer(state = globalState, action) {
           return el;
         }
       });
-      return { ...state, selectedArray: resFromInputArr };
+      return { ...state, selectedArray: resFromInputArr, inputBarValue: text };
     default:
       return state;
   }

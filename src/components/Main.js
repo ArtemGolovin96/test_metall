@@ -4,7 +4,6 @@ import "./Main.css";
 export default function Main() {
   let state = useSelector((state) => state);
   let { globalArray, selectedArray } = state;
-  let dispatch = useDispatch();
   return (
     <div className="Main">
       {selectedArray.map((el) => {

@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
 import {
   getDomainFromButtonAction,
   onChangeNameInputBarAction,
@@ -16,6 +17,10 @@ export default function Bar() {
     }, 1000);
   }
 
+  function onCLickButtonDomian(e) {
+    dispatch(getDomainFromButtonAction(e.target.value));
+  }
+
   return (
     <div className="Bar-global">
       <div className="Bar">
@@ -31,23 +36,23 @@ export default function Bar() {
         <div className="Bar__section">
           <p className="section__p">Show only</p>
           <button
-            className="section__button"
+            className={"section__button"}
             value=".org"
-            onClick={(e) => dispatch(getDomainFromButtonAction(e.target.value))}
+            onClick={(e) => onCLickButtonDomian(e)}
           >
             .org
           </button>
           <button
-            className="section__button"
+            className={"section__button"}
             value=".com"
-            onClick={(e) => dispatch(getDomainFromButtonAction(e.target.value))}
+            onClick={(e) => onCLickButtonDomian(e)}
           >
             .com
           </button>
           <button
-            className="section__button"
+            className={"section__button"}
             value=".biz"
-            onClick={(e) => dispatch(getDomainFromButtonAction(e.target.value))}
+            onClick={(e) => onCLickButtonDomian(e)}
           >
             .biz
           </button>

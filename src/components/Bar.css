@@ -71,6 +71,21 @@
   border: none;
 }
 
+.section__button:focus {
+  background-color: #ffffff;
+  color: #292929;
+  border-radius: 3px;
+  font-family: "Roboto";
+  font-size: 18px;
+  margin: 7px 0px 0px 18px;
+  display: inline-block;
+  padding-left: 11px;
+  padding-right: 26px;
+  height: 42px;
+  text-decoration: none;
+  border: none;
+}
+
 .section__button:hover {
   background-color: #ffffff;
   color: #292929;
